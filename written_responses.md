@@ -1,5 +1,13 @@
 1. What is a regular expression and how does it work?
 
+    A regular expression is an expression used to search for words and items that follow a specific pattern. The expression has options for non-punctuation ( \w ), digits ( \d ), and spaces ( \s ), among other characters. It can also detail the number of characters. This can be a specific number {4}, an indication of 0 or more (*), or 1 or more (+), as well as an optional 1 or 0 characters, (?). These two groups make up the characters and quantifiers. After you create the main regex expression, you can capture certain characters to hold for later use. This kind of search helps to capture large groups of text that have similar structure, that need to be manipulated in a certain way.
+
 2. What is an array and how does it work?
 
+    An array is a data structure that is excellent when you need to grab an element. The time complexity is equal to O(1). However, every other operation is a bit slower, usually O(n). An array usually consists of a capacity and pointer to the next empty available space. The capacity is pre-assigned. When the capacity is less than what is needed, resizing the array is in order. This means destroying the old array, and placing those values in a larger chunk of memory designated for the array. When adding or deleting elements, under the hood, values at a certain array index may have to be slid over a spot to adjust for the change. If adding an item at an index, every item to the right of that index must be moved right. However, if deleting an item, every item to the right of the index must be moved left. Searching requires looping through each item until it matches the search criteria.
+
+
+
 3. What is a hash table and how does it work?
+
+    A hash table refers to a data structure that involves a key/value pair. Under the surface though, data is held in an array. Indexes of that array require a hash function that takes a key, and assigns it an index value. Data held is usually in the form of a linked list. This is because items may resolve to the same index value of another item. When this is the case, the new key/value pair is added as a next value connected to the previous data that shares its index value. If there are too many collisions of shared index values, it often is best to lengthen the array capacity. Rehash the items to spread out the data to the extended storage. Unlike an array data structure, hash tables can add items and delete items in constant time in many cases. All that is required is a key. When searching items, you must account for every array index as well as any linked lists that are used for shared indexes.
